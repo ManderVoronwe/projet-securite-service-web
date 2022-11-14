@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Maki</title>
     <meta name="description" content="un petit cite internet d'avis clients sur des restaurants">
-    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="/assets/css/Footer-Dark.css">
     <link rel="stylesheet" href="/assets/css/Highlight-Phone.css">
     <link rel="stylesheet" href="/assets/css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
+
 
 <body>
     <nav class="navbar navbar-light navbar-expand-md">
