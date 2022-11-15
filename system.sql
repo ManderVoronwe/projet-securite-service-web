@@ -58,28 +58,29 @@ CREATE TABLE `review` (
   `r_address` varchar(100) NOT NULL,
   `review` varchar(500) NOT NULL,
   `r_by` int(50) DEFAULT NULL,
-  `re_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `re_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `rating` float(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`re_id`, `r_name`, `r_address`, `review`, `r_by`, `re_date`) VALUES
-(17, 'Tim Hortance (John)', '12 Dundas St', 'Review 1 from John', 9, '2016-02-12 09:56:39'),
-(18, 'Tim Hortance (John)', '12 Dundas St', 'Review 2 from John', 9, '2016-02-12 09:57:44'),
-(19, 'Tim Hortance (John)', '12 Dundas St', 'Review no 3 from John', 9, '2016-02-12 09:58:06'),
-(20, 'McDonalds (John)', 'Queen St', 'Excellent from John', 9, '2016-02-12 09:58:51'),
-(21, 'McDonalds (John)', 'Queen St', 'Not Bad from John', 9, '2016-02-12 09:59:06'),
-(22, 'McDonalds (John)', 'Queen St', 'Awesome from John', 9, '2016-02-12 09:59:21'),
-(23, 'Wendys', 'Kings Street', 'Review 1 John', 9, '2016-02-12 10:00:11'),
-(24, 'Wendys', 'Kings Street', 'Review 2 from John', 9, '2016-02-12 10:00:27'),
-(25, 'Wendys', 'Kings Street', 'Review 2 for Wendys, John', 9, '2016-02-12 10:00:44'),
-(26, 'Harveys (John)', 'Oxford Street', 'Review for harveys from John', 9, '2016-02-12 10:01:43'),
-(27, 'Harveys (John)', 'Oxford Street', 'Review 2 for harveys from John', 9, '2016-02-12 10:02:05'),
-(28, 'Tim Hortance (Smith)', 'Toronto', 'Best review from smith', 10, '2016-02-12 10:05:48'),
-(29, 'Tim Hortance (Smith)', 'Toronto', 'review 1 from smith', 10, '2016-02-12 10:06:13'),
-(30, 'McDonalds(Smith)', '3333 Dundas st', 'review 3', 10, '2016-02-12 10:06:46');
+INSERT INTO `review` (`re_id`, `r_name`, `r_address`, `review`, `r_by`, `re_date`,`rating`) VALUES
+(17, 'Tim Hortance (John)', '12 Dundas St', 'Review 1 from John', 9, '2016-02-12 09:56:39',4),
+(18, 'Tim Hortance (John)', '12 Dundas St', 'Review 2 from John', 9, '2016-02-12 09:57:44',4),
+(19, 'Tim Hortance (John)', '12 Dundas St', 'Review no 3 from John', 9, '2016-02-12 09:58:06',4),
+(20, 'McDonalds (John)', 'Queen St', 'Excellent from John', 9, '2016-02-12 09:58:51',4),
+(21, 'McDonalds (John)', 'Queen St', 'Not Bad from John', 9, '2016-02-12 09:59:06',4),
+(22, 'McDonalds (John)', 'Queen St', 'Awesome from John', 9, '2016-02-12 09:59:21',4),
+(23, 'Wendys', 'Kings Street', 'Review 1 John', 9, '2016-02-12 10:00:11',4),
+(24, 'Wendys', 'Kings Street', 'Review 2 from John', 9, '2016-02-12 10:00:27',4),
+(25, 'Wendys', 'Kings Street', 'Review 2 for Wendys, John', 9, '2016-02-12 10:00:44',4),
+(26, 'Harveys (John)', 'Oxford Street', 'Review for harveys from John', 9, '2016-02-12 10:01:43',4),
+(27, 'Harveys (John)', 'Oxford Street', 'Review 2 for harveys from John', 9, '2016-02-12 10:02:05',4),
+(28, 'Tim Hortance (Smith)', 'Toronto', 'Best review from smith', 10, '2016-02-12 10:05:48',4),
+(29, 'Tim Hortance (Smith)', 'Toronto', 'review 1 from smith', 10, '2016-02-12 10:06:13',4),
+(30, 'McDonalds(Smith)', '3333 Dundas st', 'review 3', 10, '2016-02-12 10:06:46',4);
 
 -- --------------------------------------------------------
 

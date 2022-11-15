@@ -45,5 +45,3 @@ if ($conn->query($sql_restaurant) === TRUE) {
 }
 
 $conn->close();
-?>
-
