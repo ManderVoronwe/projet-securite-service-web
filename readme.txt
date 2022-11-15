@@ -1,0 +1,40 @@
+Restaurants Review Portal
+(Start.ca Mini Project)
+
+Index
+===================================================
+Main Page (index.php) : User Registration and login links on the Navigation bar.
+User Registration Page: Main fields are Full name, email and password.
+User sign in page : email and password fields.
+User-dashboard : Including Link to add restaurants, 
+and list of available restaurants added and review options
+Review pages: Options are available to add more reviews and view available lists
+=====================================================================================
+
+============================
+Test user datas
+========================
+user1
+------------------------
+email: john@gmail.com
+password: qwerty
+-------------------------
+
+
+user2 
+-------------------------
+email: smith@gmail.com
+password:asdf
+-------------------------
+
+
+user3
+-------------------------
+email: sam@gmail.com
+password: test
+-------------------------
+====================================================================
+
+Database file : system.sql
+
+
