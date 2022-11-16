@@ -65,8 +65,17 @@ include "database.php";
                                         }
                                     }
                                 } else {
-                                    echo "No rating";
+                                    echo "<div>No rating </div> ";
+                                    echo "</div><div class=\"col-sm-2\">";
+
+                                    for ($i = 1; $i <= 5; $i++) {
+                                        echo '<span> _</span>';
+                                        
+                                    }
+                                    
                                 }
+
+                            
 
 
                             ?>
