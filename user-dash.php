@@ -50,7 +50,7 @@ include "database.php";
                
 
                 <a href="view_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-success btn-sm">View Review</a>
-
+                
 
 
 

@@ -74,7 +74,6 @@ $conn->close();
 
 
 
-
 <div class="container">
 
   <div class="jumbotron other-color">

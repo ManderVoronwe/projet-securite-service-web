@@ -37,6 +37,7 @@ r_name VARCHAR(100) NOT NULL,
 r_address VARCHAR(100) UNIQUE KEY,
 r_by INT(50),
 r_date TIMESTAMP
+r_rating FLOAT(1),
 )";
 if ($conn->query($sql_restaurant) === TRUE) {
     echo "Table review created successfully";

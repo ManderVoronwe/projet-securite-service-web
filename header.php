@@ -10,7 +10,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style>
     body {}
-
+    
     .other-color {
       margin: auto;
       width: 70%;
@@ -31,15 +31,15 @@ include "session.php";
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.php">Restaurant Reviews</a>
+        <a class="navbar-brand" href="index.php">MAKI's Reviews 🍣</a>
       </div>
 
       <!-- Log out menu starts -->
       <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="user_add.php">Add new Restaurant</a></li>
-
-
+          <li class="active"><a href="user_add.php">ajouter un restaurant</a></li>
+          <li class="active"><a href="user-dash.php">Mes avis</a></li>
+          <li class="active"><a href="all_restaurant.php">Tous les restaurant</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
