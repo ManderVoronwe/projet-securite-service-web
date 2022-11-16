@@ -7,6 +7,7 @@ include 'header.php';
 <?php
 include "database.php"; // database connection
 
+
 $r_name = $r_address = $r_by = $review=$rating = ""; // user registration variables
 $r_by = $re_by = $_SESSION['u_id'];
 $current_page = htmlspecialchars($_SERVER['PHP_SELF']);
@@ -17,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!empty($_POST["r_name"]) && !empty($_POST["r_address"]) && ($_POST["add_review"]==false)) {
     $r_name = $_POST["r_name"];
     $r_address = $_POST["r_address"];
-  } else if (!empty($_POST["review"]) && !empty($_POST["rating"]) && ($_POST["add_review"])==true && !empty($_POST["r_address"]) && !empty($_POST["r_name"])) {
+  } else if (!empty($_POST["review"]) && !empty($_POST["r_rating"]) && !empty($_POST["r_address"]) && !empty($_POST["r_name"])) {
     $review = $_POST["review"];
-    $rating = $_POST["rating"];
+    $rating = $_POST["r_rating"];
     $r_name = $_POST["r_name"];
     $r_address = $_POST["r_address"];
     $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES ('$r_name', '$r_address', '$review','$r_by', '$rating')";
@@ -93,7 +94,7 @@ $conn->close();
       <div class="form-group">
         <label class="control-label col-sm-2" for="add_review">Add Review:</label>
         <div class="col-sm-10">
-          <input type="checkbox" class="form-control" id="add_review" name="add_review" value="false">
+          <input type="checkbox" class="form-control" id="add_review" name="add_review">
         </div>
       </div>
       <script>
@@ -160,7 +161,7 @@ $conn->close();
           }
         </style>
         <label for="r_rating" id="stars_label" class="control-label-first" style="display:none;">Note : </label>
-        <div class="row" id="stars" style="display:none;">              
+        <div class="row" id="stars" style="display:none;" default="0" >
               <div class="rate">
                 
                 <input type="radio" id="star5" name="r_rating" value="5" />
@@ -173,6 +174,7 @@ $conn->close();
                 <label for="star2" title="text">2 stars</label>
                 <input type="radio" id="star1" name="r_rating" value="1" />
                 <label for="star1" title="text">1 star</label>
+
               </div>
               
           
