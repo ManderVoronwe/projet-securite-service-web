@@ -67,13 +67,13 @@ include "database.php";
                     <div>
                         <span class="label label-default">posté le : <?php echo $row['re_date']; ?></span>
 
-                        de : <?php 
-                                $sql_user = "SELECT u_name from users WHERE 'u_id' ='" . $row['r_by'] . "'";
+                        de : <?php
+                                $sql_user = "SELECT u_name from users WHERE `u_id` ='" . $row['r_by'] . "'";
                                 $result_user = $conn->query($sql_user);
                                 if ($result_user->num_rows > 0) {
                                     $row_user = $result_user->fetch_assoc();
                                     echo $row_user['u_name'];
-                                }else{
+                                } else {
                                     echo "Anonyme";
                                 }
                                 ?>

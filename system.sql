@@ -57,7 +57,7 @@ CREATE TABLE `review` (
   `r_name` varchar(100) NOT NULL,
   `r_address` varchar(100) NOT NULL,
   `review` varchar(500) NOT NULL,
-  `r_by` int(50) DEFAULT NULL,
+  `r_by` int(6) DEFAULT NULL,
   `re_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `rating` float(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

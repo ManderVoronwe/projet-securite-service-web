@@ -38,7 +38,7 @@ include "database.php";
                     <div class="list-group-item">
                         <div class="row">
                             <div class="col-sm-3"> <?php echo $row['r_name']; ?></div>
-                            <div class="col-sm-3"> <?php echo $row['r_address']; ?></div>
+                            <div class="col-sm-2"> <?php echo $row['r_address']; ?></div>
                             <div class="col-sm-1">
                                 <?php
                                 $sql_rating = "SELECT rating from review WHERE `r_address` ='" . $row['r_address'] . "'";
@@ -71,9 +71,22 @@ include "database.php";
 
                             ?>
                             </div>
-                            <div class="col-sm-3">
-                                <a href="restaurant_review.php?r_address=<?php echo $row['r_address']; ?>" class="btn btn-primary">Voir les avis</a>
+                            <div class="col-sm-2">
+                                
+                                <a href="restaurant_review.php?r_address=<?php echo $row['r_address']; ?>" class="btn btn-success btn-sm">Voir les avis</a>
                             </div>
+                            <div class="col-sm-2">
+                                <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
+                                    <a href="add_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-primary btn-sm">un avis ?</a>
+                                <?php 
+                                    } else {
+                                
+                                 ?>
+                                    <a href="signin.php" role="button" class="btn btn-primary btn-sm">un avis ?</a>
+                                <?php } ?>
+                                
+                            </div>
+
 
                         </div>
                     </div>
@@ -89,3 +102,6 @@ include "database.php";
         ?>
     </div>
 </div>
+
+
+<?php include 'footer.html'; ?>
