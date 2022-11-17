@@ -6,9 +6,9 @@ include "database.php";
 <div class="container">
 
   <div class="jumbotron other-color">
-    <a href="user_add.php" role="button" class="btn btn-success">Add restaurant review</a>
+    <a href="user_add.php" role="button" class="btn btn-success">Ajouter un avis restaurant</a>
 
-    <h2>Hi <?php echo $_SESSION['u_name']; ?></h2>
+    <h2>Salut <?php echo $_SESSION['u_name']; ?></h2>
 
 
     <?php $user_id = $_SESSION['u_id']; ?>
@@ -51,9 +51,6 @@ include "database.php";
 
                 <a href="view_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-success btn-sm">View Review</a>
                 
-
-
-
               </div>
               <div class="col-sm-2">
 
@@ -69,7 +66,7 @@ include "database.php";
         ?>
 
         <div class="alert alert-info">
-          <strong>Alert!</strong> No restaurants found!. Click above to add a restaurant and review.
+          <strong>Oups !</strong> Aucun restaurant corespondant n'a été trouvé. <br>Vous pouvez en ajouter un.
         </div>
 
       <?php

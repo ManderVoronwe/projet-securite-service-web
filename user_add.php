@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
 ?>
     <div class="alert alert-danger">
-      <strong>Alert!</strong> Please Complete all fields.
+      <strong>attention !</strong> Tout les champs doivent ètre remplis.
     </div>
 <?php
 
@@ -80,19 +80,19 @@ $conn->close();
 
     <form class="form-horizontal" role="form" method="post" action="<?php echo $current_page; ?>" autocomplete="on">
       <div class="form-group">
-        <label class="control-label col-sm-2" for="r_name">Name:</label>
+        <label class="control-label col-sm-2" for="r_name">Nom :</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="r_name" name="r_name" placeholder="Enter Restaurant name">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="r_address">Address:</label>
+        <label class="control-label col-sm-2" for="r_address">Address :</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="r_address" name="r_address" placeholder="Enter Restaurant address">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="add_review">Add Review:</label>
+        <label class="control-label col-sm-2" for="add_review">Ajouter un avis :</label>
         <div class="col-sm-10">
           <input type="checkbox" class="form-control" id="add_review" name="add_review">
         </div>
@@ -112,6 +112,8 @@ $conn->close();
               $("#review").hide();
               $("#rating").hide();
               $("#review_label").hide();
+              $("#stars_label").hide();
+              $("#stars").hide();
             }
           });
         });
@@ -180,7 +182,7 @@ $conn->close();
           
         </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" id="review_label" for="review" style="display:none;">Review:</label>
+        <label class="control-label col-sm-2" id="review_label" for="review" style="display:none;">Avis :</label>
         <div class="col-sm-10">
           <textarea class="form-control" id="review" name="review" placeholder="Enter your review"style="display:none;"></textarea>
         </div>
@@ -188,7 +190,7 @@ $conn->close();
 
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Proposer le restaurant</button>
         </div>
       </div>
     </form>

@@ -26,7 +26,7 @@ include "database.php";
                             <h3>Address</h3>
                         </div>
                         <div class="col-sm-2">
-                            <h3>Rating</h3>
+                            <h3>Note </h3>
                         </div>
                         <div class="col-sm-4">
                         </div>

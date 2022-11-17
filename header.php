@@ -5,9 +5,11 @@
   <title>MAKI</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
   <style>
     body {}
     
@@ -15,6 +17,7 @@
       margin: auto;
       width: 70%;
       height: 90%;
+      min-width: 60%;
     }
   </style>
 </head>
@@ -46,7 +49,7 @@ include "session.php";
           <li><a href="user-dash.php"><span class="glyphicon glyphicon-user"></span>
               <?php echo $_SESSION['u_name']; ?>
             </a></li>
-          <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span> User Log out</a></li>
+          <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span>Deconnection</a></li>
         </ul>
         <!-- Log out menu ends -->
       <?php } else { ?>
@@ -54,13 +57,13 @@ include "session.php";
         <!-- Normal nav bar -->
 
         <ul class="nav navbar-nav">
-          <li class="active"><a href="index.php">Home</a></li>
+          <li class="active"><a href="index.php">accueil</a></li>
           <li><a href="all_restaurant.php">Tous les restaurant</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span> User Sign Up</a></li>
-          <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span> User Sign In</a></li>
+          <li><a href="signup.php"><span class="glyphicon glyphicon-user"></span>Creer un compte</a></li>
+          <li><a href="signin.php"><span class="glyphicon glyphicon-log-in"></span>Connection</a></li>
         </ul>
 
 
