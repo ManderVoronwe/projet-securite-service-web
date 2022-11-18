@@ -77,7 +77,7 @@ $conn->close();
           <img src="user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100">
         </div>
         <div class="col-sm-8" style="background-color:none;">
-          <h1>User Sign In </h1>
+          <h1>Connection</h1>
         </div>
 
       </div>
@@ -100,7 +100,7 @@ $conn->close();
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Se connecter</button>
           </div>
         </div>
       </form>
