@@ -130,22 +130,22 @@ $conn->close();
           }
         </style>
         <label for="r_rating" class="control-label-first">Note : </label>
-        <div class="row">              
-              <div class="rate">
-                
-                <input type="radio" id="star5" name="r_rating" value="5" />
-                <label for="star5" title="text">5 etoiles</label>
-                <input type="radio" id="star4" name="r_rating" value="4" />
-                <label for="star4" title="text">4 etoiles</label>
-                <input type="radio" id="star3" name="r_rating" value="3" />
-                <label for="star3" title="text">3 etoiles</label>
-                <input type="radio" id="star2" name="r_rating" value="2" />
-                <label for="star2" title="text">2 etoiles</label>
-                <input type="radio" id="star1" name="r_rating" value="1" />
-                <label for="star1" title="text">1 etoiles</label>
-              </div>
-              
-          
+        <div class="row">
+          <div class="rate">
+
+            <input type="radio" id="star5" name="r_rating" value="5" />
+            <label for="star5" title="text">5 etoiles</label>
+            <input type="radio" id="star4" name="r_rating" value="4" />
+            <label for="star4" title="text">4 etoiles</label>
+            <input type="radio" id="star3" name="r_rating" value="3" />
+            <label for="star3" title="text">3 etoiles</label>
+            <input type="radio" id="star2" name="r_rating" value="2" />
+            <label for="star2" title="text">2 etoiles</label>
+            <input type="radio" id="star1" name="r_rating" value="1" />
+            <label for="star1" title="text">1 etoiles</label>
+          </div>
+
+
         </div>
         <div class="row">
           <label class="control-label col-sm-2" for="review">Avis :</label>
@@ -162,13 +162,6 @@ $conn->close();
       </div>
     </form>
   </div>
-
-</div>
-
-<?php include 'footer.html'; ?>
-
-
-</div>
 
 </div>
 
