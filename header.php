@@ -12,9 +12,8 @@
 
   <style>
 
-    header{
 
-          }
+
 
     .bord{
       border-bottom: 1px solid white;
@@ -36,6 +35,11 @@
     .hov:hover{
       color: yellow;
       text-decoration: underline;
+    }
+
+    .griid{
+      display: grid;
+      grid-template-columns: 3fr 3fr 1fr;
     }
   </style>
 
@@ -71,16 +75,40 @@ include "session.php";
         <ul class="nav navbar-nav mr-auto">
           <li><a href="user-dash.php"><span class="glyphicon glyphicon-user"></span>
               <?php echo $_SESSION['u_name']; ?>
-            </a></li>
-          <li><a href="logout.php"><span class="glyphicon glyphicon-off"></span>Deconnection</a></li>
-        </ul> -->
+ 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="user_add.php">Ajouter un restaurant</a>
-        </li>
+          <!-- <li class="nav-link active"><a href="index.php">accueil</a></li>
+          <li><a href="all_restaurant.php">Tous les restaurant</a></li> -->
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="all_restaurant.php">Tous les restaurants</a>
+          <a class="hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
         </li>
+
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-link active"><a href="index.php">accueil</a></li>
+          <li><a href="all_restaurant.php">Tous les restaurant</a></li> -->
+          <li class="nav-item">
+          <a class="hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">ajouter un restaurant</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <!-- <li class="nav-link active"><a href="index.php">accueil</a></li>
+          <li><a href="all_restaurant.php">Tous les restaurant</a></li> -->
+          <li class="nav-item">
+          <a class="hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
+        </li>
+
+        </ul>
+
+       
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="fct-button">
+        <a href="logout.php">
+
+          <button type="button" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <p class='bord'style="color:white; font-size: 0.5em;"  >Deconnection</p>
+          </button>
+        </a>
 
         </ul>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -93,7 +121,7 @@ include "session.php";
           <!-- <li class="nav-link active"><a href="index.php">accueil</a></li>
           <li><a href="all_restaurant.php">Tous les restaurant</a></li> -->
           <li class="nav-item">
-          <a class="hov " aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
+          <a class="hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
         </li>
 
         </ul>
