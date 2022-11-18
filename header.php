@@ -95,7 +95,7 @@ include "session.php";
           <!-- <li class="nav-link active"><a href="index.php">accueil</a></li>
           <li><a href="all_restaurant.php">Tous les restaurant</a></li> -->
           <li class="nav-item">
-          <a class="hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
+          <a class="hov" aria-current="page" href="user-dash.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
         </li>
 
         </ul>
