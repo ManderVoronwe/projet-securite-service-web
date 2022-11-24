@@ -10,7 +10,7 @@ def login(email, password):
     'u_email': (None, email),
     'u_password': (None, password),
   }
-  data = session.post("http://localhost:81/demo2/projet-securite-service-web-main/signin.php", files=files)
+  data = session.post("http://localhost:81/demo2/projet-securite-service-web-main/signin.php", files=files)      # Changer la source pour correspondre au programme
   #print(data.text)
   print('Login ok')
 
