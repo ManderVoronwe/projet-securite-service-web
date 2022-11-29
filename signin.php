@@ -68,7 +68,6 @@ $conn->close();
 
 <!-- Sign In page body starts from here -->
 
-<body>
 
   <div class="container">
     <div class="jumbotron  other-color">
@@ -108,6 +107,5 @@ $conn->close();
 
   </div>
 
-</body>
 
 <!-- Sign In page body ends here -->

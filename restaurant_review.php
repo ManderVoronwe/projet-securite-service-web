@@ -18,40 +18,40 @@ include "database.php";
 
         ?>
         <h2>Pas de sushi voici les 🍣's avis sur <?php echo $row['r_name']; ?></h2>
-
-        <div class="col-sm-3"> <?php echo $row['r_name']; ?></div>
-        <div class="col-sm-3"> <?php echo $row['r_address']; ?></div>
-        <div class="col-sm-1">
-            <?php
-            $sql_rating =  "SELECT rating from review WHERE `r_address` ='" . $row['r_address'] . "'";
-            $result_rating = $conn->query($sql_rating);
-            $rating = 0;
-            $count = 0;
-            while ($row_rating = $result_rating->fetch_assoc()) {
-                $rating += $row_rating['rating'];
-                $count++;
-            }
-            if ($count > 0) {
-                $rating = $rating / $count;
-                $rarting = round($rating, 0, 5);
-                echo $rating;
-            ?>
-        </div>
-        <div class="col-sm-2">
-        <?php
-                for ($i = 1; $i <= 5; $i++) {
-                    if ($i <= $rating) {
-                        echo '<span class="glyphicon glyphicon-star"></span>';
-                    } else {
-                        echo '<span class="glyphicon glyphicon-star-empty"></span>';
+        <h3>Adresse : <?php echo $row['r_address']; ?></h3>
+        <div class="row">
+            <div class="col">
+                <span style="margin: 10px">note moyenne de <?php echo $row['r_name']; ?> est de :
+                    <?php
+                    $sql_rating =  "SELECT rating from review WHERE `r_address` ='" . $row['r_address'] . "'";
+                    $result_rating = $conn->query($sql_rating);
+                    $rating = 0;
+                    $count = 0;
+                    while ($row_rating = $result_rating->fetch_assoc()) {
+                        $rating += $row_rating['rating'];
+                        $count++;
                     }
-                }
-            } else {
-                echo "No rating";
-            }
+                    if ($count > 0) {
+                        $rating = $rating / $count;
+                        $rarting = round($rating, 0, 5);
+                        echo $rating;
+                    ?>
+                </span>
+            <?php
+                        for ($i = 1; $i <= 5; $i++) {
+                            if ($i <= $rating) {
+                                echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
+                            } else {
+                                echo '<span class="fa-regular fa-star"></span>';
+                            }
+                        }
+                    } else {
+                        echo "No rating";
+                    }
 
 
-        ?>
+            ?>
+            </div>
         </div>
         <?php
         $sql_rest = "SELECT re_id, review, re_date, rating, r_name, r_by from review WHERE `r_address` ='$r_address'";
@@ -84,9 +84,9 @@ include "database.php";
                         $rating = $row['rating'];
                         for ($i = 1; $i <= 5; $i++) {
                             if ($i <= $rating) {
-                                echo '<span class="glyphicon glyphicon-star"></span>';
+                                echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
                             } else {
-                                echo '<span class="glyphicon glyphicon-star-empty"></span>';
+                                echo '<span class="fa-regular fa-star"></span>';
                             }
                         }
                         ?>
@@ -102,3 +102,4 @@ include "database.php";
         }
         ?>
     </div>
+</div>

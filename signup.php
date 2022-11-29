@@ -49,7 +49,6 @@ $conn->close();
 ?>
 
 
-<body>
 
   <div class="container">
     <div class="jumbotron  other-color">
@@ -93,5 +92,3 @@ $conn->close();
     </div>
 
   </div>
-
-</body>

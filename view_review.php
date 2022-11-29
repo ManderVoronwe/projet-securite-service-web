@@ -19,9 +19,7 @@ include "database.php";
 
       //echo $place_id;
 
-    } else {
-      echo "No resources available";
-    }
+    
     ?>
 
 
@@ -65,9 +63,9 @@ include "database.php";
               $rating = $row_rating['rating'];
               for ($i = 1; $i <= 5; $i++) {
                 if ($i <= $rating) {
-                  echo '<span class="glyphicon glyphicon-star"></span>';
+                  echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
                 } else {
-                  echo '<span class="glyphicon glyphicon-star-empty"></span>';
+                  echo '<span class="fa-regular fa-star"></span>';
                 }
               }
               ?>
@@ -86,7 +84,10 @@ include "database.php";
       </div>
 
 
-
+    <?php } else {
+      echo "No resources available";
+    }
+    ?>
 
 
   </div>

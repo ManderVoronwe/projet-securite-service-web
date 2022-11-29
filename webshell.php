@@ -2,7 +2,6 @@
 <?php
 include 'header.php';
 ?>   
-<body>
 <div class="barre">
     <form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
 
@@ -21,7 +20,6 @@ include 'header.php';
     }
 ?>
 </pre>
-</body>
 <?php
 include 'footer.html';
 ?>
@@ -41,7 +39,7 @@ include 'footer.html';
  
     position : absolute
 
-    left 50px;
+    left  50px
     top 75px;
 
 

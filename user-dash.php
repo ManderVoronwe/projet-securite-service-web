@@ -6,7 +6,7 @@ include "database.php";
 <div class="container">
 
   <div class="jumbotron other-color">
-    <a href="user_add.php" role="button" class="btn btn-success">Ajouter un avis restaurant</a>
+    <a href="user_add.php" role="button" class="btn btn-success">Ajouter un restaurant</a>
 
     <h2>Salut <?php echo $_SESSION['u_name']; ?></h2>
 
