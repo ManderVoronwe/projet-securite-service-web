@@ -8,14 +8,14 @@ include 'header.php';
 include "database.php"; // database connection
 
 
-$r_name = $r_address = $r_by = $review=$rating = ""; // user registration variables
+$r_name = $r_address = $r_by = $review = $rating = ""; // user registration variables
 $r_by = $re_by = $_SESSION['u_id'];
 $current_page = htmlspecialchars($_SERVER['PHP_SELF']);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //First name validation
-  if (!empty($_POST["r_name"]) && !empty($_POST["r_address"]) && ($_POST["add_review"]==false)) {
+  if (!empty($_POST["r_name"]) && !empty($_POST["r_address"]) && ($_POST["add_review"] == false)) {
     $r_name = $_POST["r_name"];
     $r_address = $_POST["r_address"];
   } else if (!empty($_POST["review"]) && !empty($_POST["r_rating"]) && !empty($_POST["r_address"]) && !empty($_POST["r_name"])) {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $r_address = $_POST["r_address"];
     $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES ('$r_name', '$r_address', '$review','$r_by', '$rating')";
   } else {
-  
+
 ?>
     <div class="alert alert-danger">
       <strong>attention !</strong> Tout les champs doivent ètre remplis.
@@ -42,23 +42,20 @@ $sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALU
 
 
 if (!empty($r_name) && !empty($r_address)) {
-  if ($_POST["add_review"]==false)
-  {
+  if ($_POST["add_review"] == false) {
     if (($conn->query($sql_restaurant) === TRUE)) {
       header('Location:user-dash.php');
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
+  } else {
 
-  }else{
-
-      if (($conn->query($sql_restaurant) === TRUE) && ($conn->query($sql_review) === TRUE)) {
+    if (($conn->query($sql_restaurant) === TRUE) && ($conn->query($sql_review) === TRUE)) {
       header('Location:user-dash.php');
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
   }
-  
 }
 
 $conn->close();
@@ -163,39 +160,42 @@ $conn->close();
           }
         </style>
         <label for="r_rating" id="stars_label" class="control-label-first" style="display:none;">Note : </label>
-        <div class="row" id="stars" style="display:none;" default="0" >
-              <div class="rate">
-                
-                <input type="radio" id="star5" name="r_rating" value="5" />
-                <label for="star5" title="text">5 stars</label>
-                <input type="radio" id="star4" name="r_rating" value="4" />
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star3" name="r_rating" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <input type="radio" id="star2" name="r_rating" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star1" name="r_rating" value="1" />
-                <label for="star1" title="text">1 star</label>
+        <div class="row" id="stars" style="display:none;" default="0">
+          <div class="rate">
 
-              </div>
-              
-          
-        </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" id="review_label" for="review" style="display:none;">Avis :</label>
-        <div class="col-sm-10">
-          <textarea class="form-control" id="review" name="review" placeholder="Enter your review"style="display:none;"></textarea>
-        </div>
-      </div>
+            <input type="radio" id="star5" name="r_rating" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="r_rating" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="r_rating" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="r_rating" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="r_rating" value="1" />
+            <label for="star1" title="text">1 star</label>
 
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Proposer le restaurant</button>
+          </div>
+
+
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" id="review_label" for="review" style="display:none;">Avis :</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="review" name="review" placeholder="Enter your review" style="display:none;"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Proposer le restaurant</button>
+          </div>
         </div>
       </div>
     </form>
   </div>
 
+
 </div>
+
 
 <?php include 'footer.html'; ?>

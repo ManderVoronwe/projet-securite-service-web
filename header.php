@@ -52,88 +52,93 @@ include "session.php";
 ?>
 <!-- Navigation bar starts from here -->
 
-<body class = "body" style="min-height : 100vh">
+<body class="body" style="min-height : 100%">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="width: 100%; margin: 0px;">
-    <a class="navbar-brand float-right" href="index.php" style="font-size:1.5em;">MAKI's Reviews 🍣</a>
-    <!-- Log out menu starts -->
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-collapse" style="width: 100%; margin: 0px;">
     <div class="container-fluid">
-      <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
+      <a class="navbar-brand" href="index.php" style="font-size:1.5em;">MAKI's Reviews 🍣</a>
+      <!-- Log out menu starts -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link hov" href="index.php" style="font-size: 1.5em; font-size: bolder;">Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hov" aria-current="page" href="user_add.php" style="font-size: 1.5em; font-size: bolder;">Ajouter un restaurant</a>
-          </li>
-          <?php
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link hov" href="index.php" style="font-size: 1.5em; font-size: bolder;">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hov" aria-current="page" href="user_add.php" style="font-size: 1.5em; font-size: bolder;">Ajouter un restaurant</a>
+            </li>
+            <?php
             $sql = "SELECT * FROM RESTAURANT WHERE r_by  = " . $_SESSION['u_id'];
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
-          ?>
+            ?>
+              <li class="nav-item">
+                <a class="nav-link hov" aria-current="page" href="user-dash.php" style="font-size: 1.5em; font-size: bolder;">Mes restaurants</a>
+              </li>
+            <?php }
+            $sql = "SELECT * FROM REVIEW WHERE r_by  = " . $_SESSION['u_id'];
+            $result = mysqli_query($conn, $sql);
+            $resultCheck = mysqli_num_rows($result);
+            if ($resultCheck > 0) {
+            ?>
+              <li class="nav-item">
+                <a class="nav-link hov" aria-current="page" href="user-review.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
+              </li>
+
+            <?php } ?>
+
+          </ul>
+
+
+
+          <div class="ms-auto ">
+            <a href="logout.php" type="bord" class="btn btn-default btn-lg ">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+
+              <p class='bord' style="color:white; font-size: 1.5em;">Déconnexion</p>
+            </a>
+          </div>
+
+          <!-- Log out menu ends -->
+        <?php } else { ?>
+          <!-- Normal nav bar -->
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link hov" aria-current="page" href="user-dash.php" style="font-size: 1.5em; font-size: bolder;">Mes restaurants</a>
+              <a class="nav-link hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
             </li>
-          <?php }
-          $sql = "SELECT * FROM REVIEW WHERE r_by  = " . $_SESSION['u_id'];
-          $result = mysqli_query($conn, $sql);
-          $resultCheck = mysqli_num_rows($result);
-          if ($resultCheck > 0) {
-          ?>
-          <li class="nav-item">
-            <a class="nav-link hov" aria-current="page" href="user-review.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
-          </li>
-          <?php } ?>
 
-        </ul>
+          </ul>
 
 
 
+          <div class="ms-auto ">
 
-        <div class="d-flex">
-          <a href="logout.php" type="bord" class="btn btn-default btn-lg ">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+            <a href="signup.php" type="bord" class="btn btn-default btn-lg ">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 
-            <p class='bord' style="color:white; font-size: 1.5em;">Déconnexion</p>
-          </a>
-        </div>
+              <p class='bord' style="color:white; font-size: 1.5em;">Créer un compte</p>
 
-        <!-- Log out menu ends -->
-      <?php } else { ?>
-        <!-- Normal nav bar -->
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link hov" aria-current="page" href="all_restaurant.php" style="font-size: 1.5em; font-size: bolder;">Tous les restaurants</a>
-          </li>
+            </a>
 
-        </ul>
+            <a href="signin.php" type="bord" class="btn btn-default btn-lg ">
+              <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
+
+              <p class='bord' style="color:white; font-size: 1.5em;">Se connecter</p>
+            </a>
+          </div>
+        <?php } ?>
 
 
 
-        <div class="d-flex">
-
-          <a href="signup.php" type="bord" class="btn btn-default btn-lg ">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-
-            <p class='bord' style="color:white; font-size: 1.5em;">Créer un compte</p>
-
-          </a>
-
-          <a href="signin.php" type="bord" class="btn btn-default btn-lg ">
-            <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
-
-            <p class='bord' style="color:white; font-size: 1.5em;">Se connecter</p>
-          </a>
-        </div>
-      <?php } ?>
-
-
+      </div>
 
     </div>
 

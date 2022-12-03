@@ -109,3 +109,4 @@ $conn->close();
 
 
 <!-- Sign In page body ends here -->
+<?php include 'footer.html'; ?>
