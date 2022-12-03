@@ -45,7 +45,7 @@ def run_bot():
   restaurant_review_urls = get_all_restaurants_add_review()
   review_negative = ['C`est un mauvais restaurant','Ce restaurant est très mauvais, je ne reviendrai plus','Un restaurant horrible','Repas vraiment décevant']
   review_positive = ['Un restaurant très très positif','Ce restaurant est incroyable,je n`ai jamais rien mangé d`aussi délicieux','C`est le meilleur restaurant que je connaisse']
-  for url_random in restaurant_review_urls:
-    write_review(url_random,'1', random.choice(review_negative))
-    write_review(url_random,'5', random.choice(review_positive))
+  for X in range (0,500):
+    write_review(restaurant_review_urls[0],'1', random.choice(review_negative))
+    write_review(restaurant_review_urls[1],'5', random.choice(review_positive))
 run_bot()
