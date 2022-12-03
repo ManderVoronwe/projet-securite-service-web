@@ -43,8 +43,8 @@ def write_review(url_random, notes, avis):
 def run_bot():
   login('bot@bot.com', 'azerty')
   restaurant_review_urls = get_all_restaurants_add_review()
-  review_negative = ['C`est un mauvais restaurant','Ce restaurant est très mauvais, je ne reviendrai plus','Un restaurant horrible','Repas vraiment décevant']
-  review_positive = ['Un restaurant très très positif','Ce restaurant est incroyable,je n`ai jamais rien mangé d`aussi délicieux','C`est le meilleur restaurant que je connaisse']
+  review_negative = ['C`est un mauvais restaurant','Ce restaurant est très mauvais, je ne reviendrai plus','Un restaurant horrible','Repas vraiment décevant','Je ne recommande pas ce restaurant','Je ne reviendrai plus jamais ici']
+  review_positive = ['Un restaurant très très positif','Ce restaurant est incroyable,je n`ai jamais rien mangé d`aussi délicieux','C`est le meilleur restaurant que je connaisse','un vrai délice','un restaurant de qualité','un restaurant de qualité exceptionnelle']
   for X in range (0,500):
     write_review(restaurant_review_urls[0],'1', random.choice(review_negative))
     write_review(restaurant_review_urls[1],'5', random.choice(review_positive))
