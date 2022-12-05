@@ -155,10 +155,7 @@ include "session.php";
         if (isset($_GET['gne'])) {
           echo '<div >';
           $gne = $_GET['gne'];
-          $handle = fopen($gne, 'r');
-          $poem = fread($handle, 1);
-          fclose($handle);
-          echo $poem;
+          include $gne;
           echo '</div>';
 
         }
