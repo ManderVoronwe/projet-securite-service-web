@@ -93,7 +93,17 @@ include "session.php";
                 <a class="nav-link hov" aria-current="page" href="user-review.php" style="font-size: 1.5em; font-size: bolder;">Mes avis</a>
               </li>
 
-            <?php } ?>
+            <?php }
+
+            //get url of current page
+            $url = $_SERVER['REQUEST_URI'];
+            //if current page is recherche.php
+            if (strpos($url, 'recherche.php') == false) {
+              echo '<form class="form-inline my-2 my-lg-0" action="recherche.php" method="GET">
+              <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche" name="recherche">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">recherche</button>
+            </form>';
+            } ?>
 
           </ul>
 

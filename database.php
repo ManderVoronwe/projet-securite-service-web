@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "restau";
+$dbname = "restau-from-git";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
