@@ -28,11 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-
-
-
-//$sql = "INSERT INTO `users` (`u_password`, `u_email`) VALUES ('$u_password','$u_email')";
-
 $sql = "SELECT u_id, u_name from users WHERE u_email='$u_email' and u_password='$u_password'";
 
 
@@ -87,7 +82,7 @@ $conn->close();
         <div class="form-group">
           <label class="control-label col-sm-2" for="email">Email:</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" name="u_email" id="email" placeholder="Enter email">
+            <input type="text" class="form-control" name="u_email" id="email" placeholder="Enter email">
           </div>
         </div>
         <div class="form-group">
