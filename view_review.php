@@ -6,7 +6,7 @@ include "database.php";
 <div class="container">
 
   <div class="jumbotron other-color">
-    <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home"> Home</a>
+    <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home">Accueil</a>
 
     <h2>Salut <?php echo $_SESSION['u_name']; ?> voici tous tes avis :</h2>
 
@@ -54,7 +54,7 @@ include "database.php";
 
           <div class="list-group-item">
             <?php echo $r_name ?>
-            <span class="label label-default">posté le : <?php echo $row['re_date']; ?></span>
+            <span class="label label-default">Posté le : <?php echo $row['re_date']; ?></span>
             <div class="stars">
               <?php
               $sql_rating = "SELECT rating from review WHERE `re_id` ='" . $row['re_id'] . "'";

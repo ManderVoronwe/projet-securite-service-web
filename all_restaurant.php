@@ -20,13 +20,13 @@ include "database.php";
                 <div class="list-group-item">
                     <div class="row">
                         <div class="col-sm-3">
-                            <h3>Restaurant </h3>
+                            <h3>Restaurant</h3>
                         </div>
                         <div class="col-sm-3">
-                            <h3>Address</h3>
+                            <h3>Adresse</h3>
                         </div>
                         <div class="col-sm-2">
-                            <h3>Note </h3>
+                            <h3>Note</h3>
                         </div>
                         <div class="col-sm-4">
                         </div>
@@ -86,12 +86,12 @@ include "database.php";
                             </div>
                             <div class="col-sm-2">
                                 <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
-                                    <a href="add_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-primary btn-sm">un avis ?</a>
+                                    <a href="add_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-primary btn-sm">Ajouter un avis</a>
                                 <?php 
                                     } else {
                                 
                                  ?>
-                                    <a href="signin.php" role="button" class="btn btn-primary btn-sm">un avis ?</a>
+                                    <a href="signin.php" role="button" class="btn btn-primary btn-sm">Ajouter un avis</a>
                                 <?php } ?>
                                 
                             </div>

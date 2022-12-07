@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
 ?>
     <div class="alert alert-danger">
-      <strong>Alert!</strong> Please Complete all fields.
+      <strong>Attention !</strong> Merci de compléter tous les champs.
     </div>
   <?php
 
@@ -46,7 +46,7 @@ if (!empty($u_email) && !empty($u_password)) {
   } else {
   ?>
     <div class="alert alert-danger">
-      <strong>Alert!</strong> Invalid email and password combination!.
+      <strong>Attention !</strong> Combinaison email/mot de passe incorrect.
     </div>
 <?php
 
@@ -71,7 +71,7 @@ $conn->close();
           <img src="user.png" class="img-rounded" alt="Cinque Terre" width="100" height="100">
         </div>
         <div class="col-sm-8" style="background-color:none;">
-          <h1>Connection</h1>
+          <h1>Connexion</h1>
         </div>
 
       </div>
@@ -80,13 +80,13 @@ $conn->close();
 
       <form class="form-horizontal" role="form" method="post" action="<?php echo $current_page; ?>" autocomplete="on">
         <div class="form-group">
-          <label class="control-label col-sm-2" for="email">Email:</label>
+          <label class="control-label col-sm-2" for="email">Email :</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" name="u_email" id="email" placeholder="Enter email">
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">Password:</label>
+          <label class="control-label col-sm-2" for="pwd">Mot de passe :</label>
           <div class="col-sm-10">
             <input type="password" class="form-control" name="u_password" id="pwd" placeholder="Enter password">
           </div>

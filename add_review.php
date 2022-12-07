@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
 ?>
     <div class="alert alert-danger">
-      <strong>Attention !</strong> Il faut remplir tout les champ.
+      <strong>Attention !</strong> Il faut remplir tous les champs.
     </div>
 <?php
 
@@ -79,7 +79,7 @@ $conn->close();
   <div class="jumbotron other-color">
     <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home"> Accueille</a>
 
-    <h2>Salut <?php echo $_SESSION['u_name']; ?> qu'est ce que tu pense de <?php echo $r_name; ?> ?</h2>
+    <h2>Salut <?php echo $_SESSION['u_name']; ?> ! Que penses-tu du restaurant <?php echo $r_name; ?> ?</h2>
 
 
 
@@ -134,15 +134,15 @@ $conn->close();
           <div class="rate">
 
             <input type="radio" id="star5" name="r_rating" value="5" />
-            <label for="star5" title="text">5 etoiles</label>
+            <label for="star5" title="text">5 étoiles</label>
             <input type="radio" id="star4" name="r_rating" value="4" />
-            <label for="star4" title="text">4 etoiles</label>
+            <label for="star4" title="text">4 étoiles</label>
             <input type="radio" id="star3" name="r_rating" value="3" />
-            <label for="star3" title="text">3 etoiles</label>
+            <label for="star3" title="text">3 étoiles</label>
             <input type="radio" id="star2" name="r_rating" value="2" />
-            <label for="star2" title="text">2 etoiles</label>
+            <label for="star2" title="text">2 étoiles</label>
             <input type="radio" id="star1" name="r_rating" value="1" />
-            <label for="star1" title="text">1 etoiles</label>
+            <label for="star1" title="text">1 étoiles</label>
           </div>
 
 

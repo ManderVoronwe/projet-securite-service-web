@@ -17,7 +17,7 @@ include_once "database.php";
         <div class="col-md-12">
             <form class="form-inline my-2 my-lg-0" action="recherche.php" method="GET">
                 <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche" name="recherche">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">recherche</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
             </form>
         </div>
     </div>

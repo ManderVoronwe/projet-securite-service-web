@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
     <div class="alert alert-danger">
-      <strong>attention !</strong> Tout les champs doivent ètre remplis.
+      <strong>Attention !</strong> Tous les champs doivent être remplis.
     </div>
 <?php
 
@@ -65,11 +65,11 @@ $conn->close();
 
 <div class="container">
   <div class="jumbotron  other-color">
-    <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home"> Home</a>
+    <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home">Accueil</a>
     <div class="row">
 
       <div class="col-sm-8" style="background-color:none;">
-        <h2>Un Nouveau restaurant ? </h2>
+        <h2>Ajouter un restaurant</h2>
       </div>
 
     </div>
@@ -83,7 +83,7 @@ $conn->close();
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-2" for="r_address">Address :</label>
+        <label class="control-label col-sm-2" for="r_address">Adresse :</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="r_address" name="r_address" placeholder="Enter Restaurant address">
         </div>
@@ -164,15 +164,15 @@ $conn->close();
           <div class="rate">
 
             <input type="radio" id="star5" name="r_rating" value="5" />
-            <label for="star5" title="text">5 stars</label>
+            <label for="star5" title="text">5 étoiles</label>
             <input type="radio" id="star4" name="r_rating" value="4" />
-            <label for="star4" title="text">4 stars</label>
+            <label for="star4" title="text">4 étoiles</label>
             <input type="radio" id="star3" name="r_rating" value="3" />
-            <label for="star3" title="text">3 stars</label>
+            <label for="star3" title="text">3 étoiles</label>
             <input type="radio" id="star2" name="r_rating" value="2" />
-            <label for="star2" title="text">2 stars</label>
+            <label for="star2" title="text">2 étoiles</label>
             <input type="radio" id="star1" name="r_rating" value="1" />
-            <label for="star1" title="text">1 star</label>
+            <label for="star1" title="text">1 étoiles</label>
 
           </div>
 
@@ -187,7 +187,7 @@ $conn->close();
 
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Proposer le restaurant</button>
+            <button type="submit" class="btn btn-default">Proposer un restaurant</button>
           </div>
         </div>
       </div>

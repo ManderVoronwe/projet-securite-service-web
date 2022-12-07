@@ -21,7 +21,7 @@ include "database.php";
         <h3>Adresse : <?php echo $row['r_address']; ?></h3>
         <div class="row">
             <div class="col">
-                <span style="margin: 10px">note moyenne de <?php echo $row['r_name']; ?> est de :
+                <span style="margin: 10px">Note moyenne du restaurant <?php echo $row['r_name']; ?> :
                     <?php
                     $sql_rating =  "SELECT rating from review WHERE `r_address` ='" . $row['r_address'] . "'";
                     $result_rating = $conn->query($sql_rating);
@@ -65,9 +65,9 @@ include "database.php";
 
                 <div class="list-group-item">
                     <div>
-                        <span class="label label-default">posté le : <?php echo $row['re_date']; ?></span>
+                        <span class="label label-default">Posté le : <?php echo $row['re_date']; ?></span>
 
-                        de : <?php
+                        par : <?php
                                 $sql_user = "SELECT u_name from users WHERE `u_id` ='" . $row['r_by'] . "'";
                                 $result_user = $conn->query($sql_user);
                                 if ($result_user->num_rows > 0) {

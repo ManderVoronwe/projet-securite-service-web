@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
 ?>
     <div class="alert alert-danger">
-      <strong>Alert!</strong> Please Complete all fields.
+      <strong>Attention !</strong> Merci de remplir tous les champs.
     </div>
   <?php
 
@@ -38,7 +38,7 @@ if (!empty($u_name) && !empty($u_email) && !empty($u_password)) {
   } else {
   ?>
     <div class="alert alert-danger">
-      <strong>Alert!</strong> Email Id already registered.
+      <strong>Attention !</strong> Email déjà existante.
     </div>
 <?php
   }
@@ -65,7 +65,7 @@ $conn->close();
 
       <form class="form-horizontal" role="form" method="post" action="<?php echo $current_page; ?>" autocomplete="on">
         <div class="form-group">
-          <label class="control-label col-sm-2" for="name">Un pseudo :</label>
+          <label class="control-label col-sm-2" for="name">Pseudo :</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="name" name="u_name" placeholder="Enter Full name">
           </div>
