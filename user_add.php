@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = $_POST["r_rating"];
     $r_name = $_POST["r_name"];
     $r_address = $_POST["r_address"];
-    $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES ("$r_name", "$r_address", "$review","$r_by", "$rating")";
+    $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES (\"$r_name\", \"$r_address\", \"$review\",\"$r_by\", \"$rating\")";
   } else {
 
 ?>
