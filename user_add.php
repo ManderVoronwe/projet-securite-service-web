@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALUES ("$r_name","$r_address","$r_by")";
+$sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALUES (\"$r_name\",\"$r_address\",\"$r_by\")";
 
 
 
