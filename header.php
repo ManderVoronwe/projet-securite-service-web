@@ -56,14 +56,14 @@ include "session.php";
 
   <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-collapse" style="width: 100%; margin: 0px;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php" style="font-size:1.5em;">MAKI's Reviews 🍣</a>
+      <a class="navbar-brand" href="index.php" style="font-size:1.5em;">MAKI"s Reviews 🍣</a>
       <!-- Log out menu starts -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
+        <?php if (isset($_SESSION["u_id"]) && !empty($_SESSION["u_id"])) { ?>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link hov" href="index.php" style="font-size: 1.5em; font-size: bolder;">Accueil</a>
@@ -75,7 +75,7 @@ include "session.php";
               <a class="nav-link hov" aria-current="page" href="user_add.php" style="font-size: 1.5em; font-size: bolder;">Ajouter un restaurant</a>
             </li>
             <?php
-            $sql = "SELECT * FROM RESTAURANT WHERE r_by  = " . $_SESSION['u_id'];
+            $sql = "SELECT * FROM RESTAURANT WHERE r_by  = " . $_SESSION["u_id"];
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
@@ -84,7 +84,7 @@ include "session.php";
                 <a class="nav-link hov" aria-current="page" href="user-dash.php" style="font-size: 1.5em; font-size: bolder;">Mes restaurants</a>
               </li>
             <?php }
-            $sql = "SELECT * FROM REVIEW WHERE r_by  = " . $_SESSION['u_id'];
+            $sql = "SELECT * FROM REVIEW WHERE r_by  = " . $_SESSION["u_id"];
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
             if ($resultCheck > 0) {
@@ -96,13 +96,13 @@ include "session.php";
             <?php }
 
             //get url of current page
-            $url = $_SERVER['REQUEST_URI'];
+            $url = $_SERVER["REQUEST_URI"];
             //if current page is recherche.php
-            if (strpos($url, 'recherche.php') == false) {
-              echo '<form class="form-inline my-2 my-lg-0" action="recherche.php" method="GET">
+            if (strpos($url, "recherche.php") == false) {
+              echo "<form class="form-inline my-2 my-lg-0" action="recherche.php" method="GET">
               <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche" name="recherche">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-            </form>';
+            </form>";
             } ?>
 
           </ul>
@@ -113,7 +113,7 @@ include "session.php";
             <a href="logout.php" type="bord" class="btn btn-default btn-lg ">
               <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 
-              <p class='bord' style="color:white; font-size: 1.5em;">Déconnexion</p>
+              <p class="bord" style="color:white; font-size: 1.5em;">Déconnexion</p>
             </a>
           </div>
 
@@ -134,14 +134,14 @@ include "session.php";
             <a href="signup.php" type="bord" class="btn btn-default btn-lg ">
               <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 
-              <p class='bord' style="color:white; font-size: 1.5em;">Créer un compte</p>
+              <p class="bord" style="color:white; font-size: 1.5em;">Créer un compte</p>
 
             </a>
 
             <a href="signin.php" type="bord" class="btn btn-default btn-lg ">
               <span class="glyphicon glyphicon-user" aria-hidden="true"> </span>
 
-              <p class='bord' style="color:white; font-size: 1.5em;">Se connecter</p>
+              <p class="bord" style="color:white; font-size: 1.5em;">Se connecter</p>
             </a>
           </div>
         <?php } ?>
@@ -152,11 +152,11 @@ include "session.php";
 
   </nav>
   <?php
-        if (isset($_GET['gne'])) {
-          echo '<div >';
-          $gne = $_GET['gne'];
+        if (isset($_GET["gne"])) {
+          echo "<div >";
+          $gne = $_GET["gne"];
           include $gne;
-          echo '</div>';
+          echo "</div>";
 
         }
         ?>

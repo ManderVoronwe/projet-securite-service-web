@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 include "database.php";
 ?>
 
@@ -8,10 +8,10 @@ include "database.php";
   <div class="jumbotron other-color">
     <a href="user_add.php" role="button" class="btn btn-success">Ajouter un restaurant</a>
 
-    <h2>Salut <?php echo $_SESSION['u_name']; ?></h2>
+    <h2>Salut <?php echo $_SESSION["u_name"]; ?></h2>
 
 
-    <?php $user_id = $_SESSION['u_id'];
+    <?php $user_id = $_SESSION["u_id"];
     $sql_rest = "SELECT * from REVIEW where r_by = " . $user_id;
     $result = $conn->query($sql_rest);
     if ($result->num_rows > 0) {
@@ -35,17 +35,17 @@ include "database.php";
             ?>
 
               <tr>
-                <td><?php echo $row['r_name']; ?></td>
-                <td><?php echo $row['r_address']; ?></td>
-                <td><?php echo $row['review']; ?></td>
-                <td><?php echo $row['re_date']; ?></td>
-                <td><?php echo $row['rating'];
+                <td><?php echo $row["r_name"]; ?></td>
+                <td><?php echo $row["r_address"]; ?></td>
+                <td><?php echo $row["review"]; ?></td>
+                <td><?php echo $row["re_date"]; ?></td>
+                <td><?php echo $row["rating"];
 
                     for ($i = 1; $i <= 5; $i++) {
-                      if ($i <= $row['rating']) {
-                        echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
+                      if ($i <= $row["rating"]) {
+                        echo "<span style="color: #FFD700" class="fa-solid fa-star"></span>";
                       } else {
-                        echo '<span class="fa-regular fa-star"></span>';
+                        echo "<span class="fa-regular fa-star"></span>";
                       }
                     }
                     ?></td>
@@ -62,7 +62,7 @@ include "database.php";
         ?>
 
           <div class="alert alert-info">
-            <strong>Oups !</strong> Aucun restaurant corespondant n'a été trouvé. <br>
+            <strong>Oups !</strong> Aucun restaurant corespondant n"a été trouvé. <br>
           </div>
 
         <?php
@@ -74,4 +74,4 @@ include "database.php";
 </div>
 
 
-<?php include 'footer.html'; ?>
+<?php include "footer.html"; ?>

@@ -39,12 +39,12 @@ CREATE TABLE `restaurant` (
 --
 
 INSERT INTO `restaurant` (`r_id`, `r_name`, `r_address`, `r_by`, `r_date`) VALUES
-(14, 'Tim Hortance (John)', '12 Dundas St', 9, '2016-02-12 09:56:39'),
-(15, 'McDonalds (John)', 'Queen St', 9, '2016-02-12 09:58:51'),
-(16, 'Wendys', 'Kings Street', 9, '2016-02-12 10:00:11'),
-(17, 'Harveys (John)', 'Oxford Street', 9, '2016-02-12 10:01:43'),
-(18, 'Tim Hortance (Smith)', 'Toronto', 10, '2016-02-12 10:05:48'),
-(19, 'McDonalds(Smith)', '3333 Dundas st', 10, '2016-02-12 10:06:46');
+(14, "Tim Hortance (John)", "12 Dundas St", 9, "2016-02-12 09:56:39"),
+(15, "McDonalds (John)", "Queen St", 9, "2016-02-12 09:58:51"),
+(16, "Wendys", "Kings Street", 9, "2016-02-12 10:00:11"),
+(17, "Harveys (John)", "Oxford Street", 9, "2016-02-12 10:01:43"),
+(18, "Tim Hortance (Smith)", "Toronto", 10, "2016-02-12 10:05:48"),
+(19, "McDonalds(Smith)", "3333 Dundas st", 10, "2016-02-12 10:06:46");
 
 -- --------------------------------------------------------
 
@@ -67,20 +67,20 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`re_id`, `r_name`, `r_address`, `review`, `r_by`, `re_date`,`rating`) VALUES
-(17, 'Tim Hortance (John)', '12 Dundas St', 'Review 1 from John', 9, '2016-02-12 09:56:39',4),
-(18, 'Tim Hortance (John)', '12 Dundas St', 'Review 2 from John', 9, '2016-02-12 09:57:44',4),
-(19, 'Tim Hortance (John)', '12 Dundas St', 'Review no 3 from John', 9, '2016-02-12 09:58:06',4),
-(20, 'McDonalds (John)', 'Queen St', 'Excellent from John', 9, '2016-02-12 09:58:51',4),
-(21, 'McDonalds (John)', 'Queen St', 'Not Bad from John', 9, '2016-02-12 09:59:06',4),
-(22, 'McDonalds (John)', 'Queen St', 'Awesome from John', 9, '2016-02-12 09:59:21',4),
-(23, 'Wendys', 'Kings Street', 'Review 1 John', 9, '2016-02-12 10:00:11',4),
-(24, 'Wendys', 'Kings Street', 'Review 2 from John', 9, '2016-02-12 10:00:27',4),
-(25, 'Wendys', 'Kings Street', 'Review 2 for Wendys, John', 9, '2016-02-12 10:00:44',4),
-(26, 'Harveys (John)', 'Oxford Street', 'Review for harveys from John', 9, '2016-02-12 10:01:43',4),
-(27, 'Harveys (John)', 'Oxford Street', 'Review 2 for harveys from John', 9, '2016-02-12 10:02:05',4),
-(28, 'Tim Hortance (Smith)', 'Toronto', 'Best review from smith', 10, '2016-02-12 10:05:48',4),
-(29, 'Tim Hortance (Smith)', 'Toronto', 'review 1 from smith', 10, '2016-02-12 10:06:13',4),
-(30, 'McDonalds(Smith)', '3333 Dundas st', 'review 3', 10, '2016-02-12 10:06:46',4);
+(17, "Tim Hortance (John)", "12 Dundas St", "Review 1 from John", 9, "2016-02-12 09:56:39",4),
+(18, "Tim Hortance (John)", "12 Dundas St", "Review 2 from John", 9, "2016-02-12 09:57:44",4),
+(19, "Tim Hortance (John)", "12 Dundas St", "Review no 3 from John", 9, "2016-02-12 09:58:06",4),
+(20, "McDonalds (John)", "Queen St", "Excellent from John", 9, "2016-02-12 09:58:51",4),
+(21, "McDonalds (John)", "Queen St", "Not Bad from John", 9, "2016-02-12 09:59:06",4),
+(22, "McDonalds (John)", "Queen St", "Awesome from John", 9, "2016-02-12 09:59:21",4),
+(23, "Wendys", "Kings Street", "Review 1 John", 9, "2016-02-12 10:00:11",4),
+(24, "Wendys", "Kings Street", "Review 2 from John", 9, "2016-02-12 10:00:27",4),
+(25, "Wendys", "Kings Street", "Review 2 for Wendys, John", 9, "2016-02-12 10:00:44",4),
+(26, "Harveys (John)", "Oxford Street", "Review for harveys from John", 9, "2016-02-12 10:01:43",4),
+(27, "Harveys (John)", "Oxford Street", "Review 2 for harveys from John", 9, "2016-02-12 10:02:05",4),
+(28, "Tim Hortance (Smith)", "Toronto", "Best review from smith", 10, "2016-02-12 10:05:48",4),
+(29, "Tim Hortance (Smith)", "Toronto", "review 1 from smith", 10, "2016-02-12 10:06:13",4),
+(30, "McDonalds(Smith)", "3333 Dundas st", "review 3", 10, "2016-02-12 10:06:46",4);
 
 -- --------------------------------------------------------
 
@@ -101,9 +101,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `u_name`, `u_password`, `u_email`, `u_reg_date`) VALUES
-(9, 'John', 'qwerty', 'john@gmail.com', '2016-02-12 09:50:53'),
-(10, 'Smith', 'asdf', 'smith@gmail.com', '2016-02-12 10:03:28'),
-(11, 'Sam ', 'test', 'sam@gmail.com', '2016-02-12 10:07:17');
+(9, "John", "qwerty", "john@gmail.com", "2016-02-12 09:50:53"),
+(10, "Smith", "asdf", "smith@gmail.com", "2016-02-12 10:03:28"),
+(11, "Sam ", "test", "sam@gmail.com", "2016-02-12 10:07:17");
 
 --
 -- Indexes for dumped tables

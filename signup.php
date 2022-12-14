@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 
 ?>
 
@@ -8,7 +8,7 @@ include 'header.php';
 include "database.php"; // database connection
 
 $u_name = $u_password = $u_email = ""; // user registration variables
-$current_page = htmlspecialchars($_SERVER['PHP_SELF']);
+$current_page = htmlspecialchars($_SERVER["PHP_SELF"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -29,12 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-$sql = "INSERT INTO `users` (`u_name`, `u_password`, `u_email`) VALUES ('$u_name','$u_password','$u_email')";
+$sql = "INSERT INTO `users` (`u_name`, `u_password`, `u_email`) VALUES ("$u_name","$u_password","$u_email")";
 
 
 if (!empty($u_name) && !empty($u_email) && !empty($u_password)) {
   if ($conn->query($sql) === TRUE) {
-    header('Location:signin.php');
+    header("Location:signin.php");
   } else {
   ?>
     <div class="alert alert-danger">
@@ -92,4 +92,4 @@ $conn->close();
     </div>
 
   </div>
-  <?php include 'footer.html'; ?>
+  <?php include "footer.html"; ?>

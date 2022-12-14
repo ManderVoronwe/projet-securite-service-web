@@ -1,7 +1,7 @@
 <?php
 //header html file for bootstrap
 
-include 'header.php';
+include "header.php";
 ?>
 
 
@@ -10,7 +10,7 @@ include 'header.php';
 include "database.php"; // database connection
 
 $u_password = $u_email = ""; // user registration variables
-$current_page = htmlspecialchars($_SERVER['PHP_SELF']);
+$current_page = htmlspecialchars($_SERVER["PHP_SELF"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$sql = "SELECT u_id, u_name from users WHERE u_email='$u_email' and u_password='$u_password'";
+$sql = "SELECT u_id, u_name from users WHERE u_email="$u_email" and u_password="$u_password"";
 
 
 if (!empty($u_email) && !empty($u_password)) {
@@ -38,11 +38,11 @@ if (!empty($u_email) && !empty($u_password)) {
     // output data of each row
     $row = $result->fetch_array();
     //  echo "id: " . $row["u_id"]. " - Name: " . $row["u_name"]. "<br>";
-    $_SESSION['login'] = true;
-    $_SESSION['u_id'] = $row['u_id'];
-    $_SESSION['u_name'] = $row['u_name'];
+    $_SESSION["login"] = true;
+    $_SESSION["u_id"] = $row["u_id"];
+    $_SESSION["u_name"] = $row["u_name"];
 
-    header('Location:user-dash.php');
+    header("Location:user-dash.php");
   } else {
   ?>
     <div class="alert alert-danger">
@@ -104,4 +104,4 @@ $conn->close();
 
 
 <!-- Sign In page body ends here -->
-<?php include 'footer.html'; ?>
+<?php include "footer.html"; ?>

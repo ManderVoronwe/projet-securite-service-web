@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 ?>
 
 <!-- Header section ends -->
@@ -13,7 +13,7 @@ include 'header.php';
     <div class="row">
       <div class="col-sm-6"> <img src="home.png" class="img-rounded" alt="Cinque Terre" width="350" height="350"> </div>
       <div class="col-sm-6">
-        <h1>MAKI's Reviews 🍣</h1>
+        <h1>MAKI"s Reviews 🍣</h1>
       </div>
 
     </div>
@@ -30,5 +30,5 @@ include 'header.php';
 
 
 <?php
-include 'footer.html';
+include "footer.html";
 ?>

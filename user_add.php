@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 
 ?>
 
@@ -9,8 +9,8 @@ include "database.php"; // database connection
 
 
 $r_name = $r_address = $r_by = $review = $rating = ""; // user registration variables
-$r_by = $re_by = $_SESSION['u_id'];
-$current_page = htmlspecialchars($_SERVER['PHP_SELF']);
+$r_by = $re_by = $_SESSION["u_id"];
+$current_page = htmlspecialchars($_SERVER["PHP_SELF"]);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rating = $_POST["r_rating"];
     $r_name = $_POST["r_name"];
     $r_address = $_POST["r_address"];
-    $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES ('$r_name', '$r_address', '$review','$r_by', '$rating')";
+    $sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by` , `rating` ) VALUES ("$r_name", "$r_address", "$review","$r_by", "$rating")";
   } else {
 
 ?>
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALUES ('$r_name','$r_address','$r_by')";
+$sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALUES ("$r_name","$r_address","$r_by")";
 
 
 
@@ -44,14 +44,14 @@ $sql_restaurant = "INSERT INTO `restaurant` (`r_name`, `r_address`, `r_by`) VALU
 if (!empty($r_name) && !empty($r_address)) {
   if ($_POST["add_review"] == false) {
     if (($conn->query($sql_restaurant) === TRUE)) {
-      header('Location:user-dash.php');
+      header("Location:user-dash.php");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
   } else {
 
     if (($conn->query($sql_restaurant) === TRUE) && ($conn->query($sql_review) === TRUE)) {
-      header('Location:user-dash.php');
+      header("Location:user-dash.php");
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -139,7 +139,7 @@ $conn->close();
           }
 
           .rate:not(:checked)>label:before {
-            content: '★ ';
+            content: "★ ";
           }
 
           .rate>input:checked~label {
@@ -198,4 +198,4 @@ $conn->close();
 </div>
 
 
-<?php include 'footer.html'; ?>
+<?php include "footer.html"; ?>

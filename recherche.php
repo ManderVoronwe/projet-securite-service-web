@@ -1,7 +1,7 @@
 <?php
 //if file is included in another file
 
-include_once 'header.php';
+include_once "header.php";
 include_once "database.php";
 
 
@@ -29,16 +29,16 @@ include_once "database.php";
     <div class="col">
 
         <?php
-        if (isset($_GET['recherche'])) {
+        if (isset($_GET["recherche"])) {
             //afficher les resusltats de la recherche
-            $recherche = $_GET['recherche'];
+            $recherche = $_GET["recherche"];
             //if recherche dos not start by >
-            if (!preg_match('/^>/', $recherche)) {
-                $sql = "SELECT * FROM `restaurant` WHERE `r_name` LIKE '%$recherche%' OR `r_address` LIKE '%$recherche%'";
+            if (!preg_match("/^>/", $recherche)) {
+                $sql = "SELECT * FROM `restaurant` WHERE `r_name` LIKE "%$recherche%" OR `r_address` LIKE "%$recherche%"";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo '<div class="row"><div class="col">';
-                    echo '<table class="table table-striped">
+                    echo "<div class="row"><div class="col">";
+                    echo "<table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">Nom</th>
@@ -46,23 +46,23 @@ include_once "database.php";
                                 <th scope="col">Voir les avis</th>
                             </tr>
                         </thead>
-                        <tbody>';
+                        <tbody>";
 
                     while ($row = $result->fetch_assoc()) {
-                        echo '<tr>
-                                <td>' . $row['r_name'] . '</td>
-                                <td>' . $row['r_address'] . '</td>
-                                <td><a href="restaurant_review.php?r_address=' . $row['r_address'] . '">Voir les avis</a></td>
-                            </tr>';
+                        echo "<tr>
+                                <td>" . $row["r_name"] . "</td>
+                                <td>" . $row["r_address"] . "</td>
+                                <td><a href="restaurant_review.php?r_address=" . $row["r_address"] . "">Voir les avis</a></td>
+                            </tr>";
                     }
-                    echo '</tbody>
+                    echo "</tbody>
                         </table>
                     </div>
-                    </div>';
+                    </div>";
                 } else {
-                    echo '<div class="row">';
-                    echo '<h2>Aucun résultat</h2>';
-                    echo '</div>';
+                    echo "<div class="row">";
+                    echo "<h2>Aucun résultat</h2>";
+                    echo "</div>";
                 }
             } else {
                 //remove the first character
@@ -80,7 +80,7 @@ include_once "database.php";
 
 
 <?php
-include_once 'footer.html';
+include_once "footer.html";
 
 
 ?>

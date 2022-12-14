@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 include "database.php";
 ?>
 
@@ -37,16 +37,16 @@ include "database.php";
                 ?>
                     <div class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-3"> <?php echo $row['r_name']; ?></div>
-                            <div class="col-sm-2"> <?php echo $row['r_address']; ?></div>
+                            <div class="col-sm-3"> <?php echo $row["r_name"]; ?></div>
+                            <div class="col-sm-2"> <?php echo $row["r_address"]; ?></div>
                             <div class="col-sm-1">
                                 <?php
-                                $sql_rating = "SELECT rating from review WHERE `r_address` ='" . $row['r_address'] . "'";
+                                $sql_rating = "SELECT rating from review WHERE `r_address` ="" . $row["r_address"] . """;
                                 $result_rating = $conn->query($sql_rating);
                                 $rating = 0;
                                 $count = 0;
                                 while ($row_rating = $result_rating->fetch_assoc()) {
-                                    $rating += $row_rating['rating'];
+                                    $rating += $row_rating["rating"];
                                     $count++;
                                 }
                                 if ($count > 0) {
@@ -59,9 +59,9 @@ include "database.php";
                             <?php
                                     for ($i = 1; $i <= 5; $i++) {
                                         if ($i <= $rating) {
-                                            echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
+                                            echo "<span style="color: #FFD700" class="fa-solid fa-star"></span>";
                                         } else {
-                                            echo '<span class="fa-regular fa-star"></span>';
+                                            echo "<span class="fa-regular fa-star"></span>";
                                         }
                                     }
                                 } else {
@@ -69,7 +69,7 @@ include "database.php";
                                     echo "</div><div class=\"col-sm-2\">";
 
                                     for ($i = 1; $i <= 5; $i++) {
-                                        echo '<span> _</span>';
+                                        echo "<span> _</span>";
                                         
                                     }
                                     
@@ -82,11 +82,11 @@ include "database.php";
                             </div>
                             <div class="col-sm-2">
                                 
-                                <a href="restaurant_review.php?r_address=<?php echo $row['r_address']; ?>" class="btn btn-success btn-sm">Voir les avis</a>
+                                <a href="restaurant_review.php?r_address=<?php echo $row["r_address"]; ?>" class="btn btn-success btn-sm">Voir les avis</a>
                             </div>
                             <div class="col-sm-2">
-                                <?php if (isset($_SESSION['u_id']) && !empty($_SESSION['u_id'])) { ?>
-                                    <a href="add_review.php?r_id=<?php print $row['r_id']; ?>&r_name=<?php print $row['r_name']; ?>&r_address=<?php print $row['r_address']; ?>" role="button" class="btn btn-primary btn-sm">Ajouter un avis</a>
+                                <?php if (isset($_SESSION["u_id"]) && !empty($_SESSION["u_id"])) { ?>
+                                    <a href="add_review.php?r_id=<?php print $row["r_id"]; ?>&r_name=<?php print $row["r_name"]; ?>&r_address=<?php print $row["r_address"]; ?>" role="button" class="btn btn-primary btn-sm">Ajouter un avis</a>
                                 <?php 
                                     } else {
                                 
@@ -113,4 +113,4 @@ include "database.php";
 </div>
 
 
-<?php include 'footer.html'; ?>
+<?php include "footer.html"; ?>

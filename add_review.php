@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include "header.php";
 include "database.php";
 $review = "";
 $r_rating = "";
@@ -8,16 +8,16 @@ $r_rating = "";
 
 
 <?php
-if (isset($_GET['r_id']) && isset($_GET['r_name']) && isset($_GET['r_address'])) {
-  $r_id = $_GET['r_id'];
-  $r_name = $_GET['r_name'];
-  $r_address = $_GET['r_address'];
-  $_SESSION['r_id'] = $r_id;
-  $_SESSION['r_name'] = $r_name;
-  $_SESSION['r_address'] = $r_address;
+if (isset($_GET["r_id"]) && isset($_GET["r_name"]) && isset($_GET["r_address"])) {
+  $r_id = $_GET["r_id"];
+  $r_name = $_GET["r_name"];
+  $r_address = $_GET["r_address"];
+  $_SESSION["r_id"] = $r_id;
+  $_SESSION["r_name"] = $r_name;
+  $_SESSION["r_address"] = $r_address;
 }
 
-$r_by = $_SESSION['u_id'];
+$r_by = $_SESSION["u_id"];
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -35,19 +35,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 
   }
-  $r_id = $_SESSION['r_id'];
-  $r_name = $_SESSION['r_name'];
-  $r_address = $_SESSION['r_address'];
-  $_SESSION['r_address'] = $_SESSION['r_name'] = $_SESSION['r_id'] = "";
+  $r_id = $_SESSION["r_id"];
+  $r_name = $_SESSION["r_name"];
+  $r_address = $_SESSION["r_address"];
+  $_SESSION["r_address"] = $_SESSION["r_name"] = $_SESSION["r_id"] = "";
 }
 
 
-$sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by`, `rating`) VALUES ('$r_name', '$r_address', '$review','$r_by', '$r_rating')";
+$sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by`, `rating`) VALUES ("$r_name", "$r_address", "$review","$r_by", "$r_rating")";
 
 
 if (!empty($r_name) && !empty($r_address) && !empty($review) && !empty($r_by)) {
   if ($conn->query($sql_review) === TRUE) {
-    header('Location:user-dash.php');
+    header("Location:user-dash.php");
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
@@ -79,7 +79,7 @@ $conn->close();
   <div class="jumbotron other-color">
     <a href="user-dash.php" role="button" class="btn btn-success glyphicon glyphicon-home"> Accueille</a>
 
-    <h2>Salut <?php echo $_SESSION['u_name']; ?> ! Que penses-tu du restaurant <?php echo $r_name; ?> ?</h2>
+    <h2>Salut <?php echo $_SESSION["u_name"]; ?> ! Que penses-tu du restaurant <?php echo $r_name; ?> ?</h2>
 
 
 
@@ -109,7 +109,7 @@ $conn->close();
           }
 
           .rate:not(:checked)>label:before {
-            content: '★ ';
+            content: "★ ";
           }
 
           .rate>input:checked~label {
@@ -165,4 +165,4 @@ $conn->close();
 
 </div>
 
-<?php include 'footer.html'; ?>
+<?php include "footer.html"; ?>
