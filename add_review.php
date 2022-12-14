@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by`, `rating`) VALUES ("$r_name", "$r_address", "$review","$r_by", "$r_rating")";
+$sql_review = "INSERT INTO `review` (`r_name`, `r_address`, `review`, `r_by`, `rating`) VALUES (\"$r_name\", \"$r_address\", \"$review\",\"$r_by\", \"$r_rating\")";
 
 
 if (!empty($r_name) && !empty($r_address) && !empty($review) && !empty($r_by)) {
