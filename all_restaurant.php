@@ -41,7 +41,7 @@ include "database.php";
                             <div class="col-sm-2"> <?php echo $row["r_address"]; ?></div>
                             <div class="col-sm-1">
                                 <?php
-                                $sql_rating = "SELECT rating from review WHERE `r_address` ="" . $row["r_address"] . """;
+                                $sql_rating = "SELECT rating from review WHERE `r_address` =\"" . $row["r_address"] . "\"";
                                 $result_rating = $conn->query($sql_rating);
                                 $rating = 0;
                                 $count = 0;
@@ -59,9 +59,9 @@ include "database.php";
                             <?php
                                     for ($i = 1; $i <= 5; $i++) {
                                         if ($i <= $rating) {
-                                            echo "<span style="color: #FFD700" class="fa-solid fa-star"></span>";
+                                            echo "<span style=\"color: #FFD700\" class=\"fa-solid fa-star\"></span>";
                                         } else {
-                                            echo "<span class="fa-regular fa-star"></span>";
+                                            echo "<span class=\"fa-regular fa-star\"></span>";
                                         }
                                     }
                                 } else {

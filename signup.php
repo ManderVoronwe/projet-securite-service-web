@@ -29,8 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-$sql = "INSERT INTO `users` (`u_name`, `u_password`, `u_email`) VALUES ("$u_name","$u_password","$u_email")";
-
+$sql = "INSERT INTO `users` (`u_name`, `u_password`, `u_email`) VALUES ('$u_name','$u_password','$u_email')";
 
 if (!empty($u_name) && !empty($u_email) && !empty($u_password)) {
   if ($conn->query($sql) === TRUE) {

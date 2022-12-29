@@ -43,9 +43,9 @@ include "database.php";
 
                     for ($i = 1; $i <= 5; $i++) {
                       if ($i <= $row["rating"]) {
-                        echo "<span style="color: #FFD700" class="fa-solid fa-star"></span>";
+                        echo '<span style="color: #FFD700" class="fa-solid fa-star"></span>';
                       } else {
-                        echo "<span class="fa-regular fa-star"></span>";
+                        echo '<span class="fa-regular fa-star"></span>';
                       }
                     }
                     ?></td>

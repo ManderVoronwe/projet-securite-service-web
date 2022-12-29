@@ -37,30 +37,30 @@ include_once "database.php";
                 $sql = "SELECT * FROM `restaurant` WHERE `r_name` LIKE "%$recherche%" OR `r_address` LIKE "%$recherche%"";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    echo "<div class="row"><div class="col">";
-                    echo "<table class="table table-striped">
+                    echo "<div class=\"row\"><div class=\"col\">";
+                    echo "<table class=\"table table-striped\">
                         <thead>
                             <tr>
-                                <th scope="col">Nom</th>
-                                <th scope="col">Adresse</th>
-                                <th scope="col">Voir les avis</th>
+                                <th scope=\"col\">Nom</th>
+                                <th scope=\"col\">Adresse</th>
+                                <th scope=\"col\">Voir les avis</th>
                             </tr>
                         </thead>
                         <tbody>";
 
                     while ($row = $result->fetch_assoc()) {
-                        echo "<tr>
+                        echo '<tr>
                                 <td>" . $row["r_name"] . "</td>
                                 <td>" . $row["r_address"] . "</td>
                                 <td><a href="restaurant_review.php?r_address=" . $row["r_address"] . "">Voir les avis</a></td>
-                            </tr>";
+                            </tr>';
                     }
-                    echo "</tbody>
+                    echo '</tbody>
                         </table>
                     </div>
-                    </div>";
+                    </div>';
                 } else {
-                    echo "<div class="row">";
+                    echo '<div class="row">';
                     echo "<h2>Aucun résultat</h2>";
                     echo "</div>";
                 }

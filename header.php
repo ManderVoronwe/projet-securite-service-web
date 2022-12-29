@@ -56,7 +56,7 @@ include "session.php";
 
   <nav class="navbar navbar-expand-xl navbar-dark bg-dark navbar-collapse" style="width: 100%; margin: 0px;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php" style="font-size:1.5em;">MAKI"s Reviews 🍣</a>
+      <a class="navbar-brand" href="index.php" style="font-size:1.5em;">MAKI's Reviews 🍣</a>
       <!-- Log out menu starts -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -99,9 +99,9 @@ include "session.php";
             $url = $_SERVER["REQUEST_URI"];
             //if current page is recherche.php
             if (strpos($url, "recherche.php") == false) {
-              echo "<form class="form-inline my-2 my-lg-0" action="recherche.php" method="GET">
-              <input class="form-control mr-sm-2" type="search" placeholder="recherche" aria-label="recherche" name="recherche">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+              echo "<form class=\"form-inline my-2 my-lg-0\" action=\"recherche.php\" method=\"GET\">
+              <input class=\"form-control mr-sm-2\" type=\"search\" placeholder=\"recherche\" aria-label=\"recherche\" name=\"recherche\">
+              <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Rechercher</button>
             </form>";
             } ?>
 
@@ -160,3 +160,14 @@ include "session.php";
 
         }
         ?>
+
+<iframe width="100%" height="100%" id ="pub" scrolling="no"></iframe>
+
+      <script>
+        let page = "https://projet-securite-4a.monllor.fr/pub?sector=HORECA";
+        //page ="https://projet-securite-4a.monllor.fr/pub?sector=CELENE";
+        
+        //print the page
+        document.getElementById("pub").src = page;
+
+      </script>

@@ -12,7 +12,7 @@ include "database.php";
 
 
     <?php $user_id = $_SESSION["u_id"]; ?>
-    <?php $sql_rest = "SELECT r_id, r_name, r_address from restaurant WHERE `r_by` ="$user_id""; ?>
+    <?php $sql_rest = 'SELECT r_id, r_name, r_address from restaurant WHERE `r_by` ="$user_id"'; ?>
     <?php $result = $conn->query($sql_rest); ?>
 
     <?php if ($result->num_rows > 0) {

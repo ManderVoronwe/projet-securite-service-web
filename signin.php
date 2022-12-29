@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$sql = "SELECT u_id, u_name from users WHERE u_email="$u_email" and u_password="$u_password"";
+$sql = "SELECT u_id, u_name from users WHERE u_email='$u_email' and u_password='$u_password'";
 
 
 if (!empty($u_email) && !empty($u_password)) {
