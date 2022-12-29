@@ -165,8 +165,7 @@ include "session.php";
 
       <script>
         let page = "https://projet-securite-4a.monllor.fr/pub?sector=HORECA";
-        //page ="https://projet-securite-4a.monllor.fr/pub?sector=CELENE";
-        
+        page ="https://projet-securite-4a.monllor.fr/pub?sector=CELENE";
         //print the page
         document.getElementById("pub").src = page;
 
